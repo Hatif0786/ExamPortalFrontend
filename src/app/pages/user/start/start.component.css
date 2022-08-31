@@ -1,0 +1,10 @@
+#btn:hover{
+    width: 100%;
+
+}
+
+
+#btn{
+    transition: width 2s;
+    transition-timing-function: ease-out;
+}

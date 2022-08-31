@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-list>
+        <h1 class="text-center" style="font-size: xx-large">All Categories</h1>
+        <hr/>
+
+        <mat-list-item *ngFor="let category of categories">
+            <mat-icon mat-list-icon>category</mat-icon>
+            <div style="font-size:large; font-weight: 20px; margin-bottom: 10px" mat-line>{{category.title}}</div>
+            <div mat-line>{{category.description}}</div>
+
+            <div class="container">
+                <button mat-raised-button color="accent" style="float:right; border-radius: 18px; margin-left: 4px;" type="submit" (click)="delete(category.cid)">Delete</button>
+                <button mat-raised-button color="primary" style="float:right; border-radius: 18px;" type="submit" [routerLink]="'/admin/category/'+category.cid">Update</button>
+            </div>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+
+    <div class="container text-center" style="margin-top: 20px">
+        <button mat-raised-button color="primary" style="border-radius: 18px;" routerLink="/admin/add-category">Add Category</button>
+    </div>
+</mat-card>

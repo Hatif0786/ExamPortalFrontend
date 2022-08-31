@@ -1,0 +1,57 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6 offset-md-3" style="margin-bottom:40px">
+                <mat-card>
+                <div class="container text-center">
+                    <img src="../../../assets/images/logo-b.png" alt="">
+                </div>
+                <h1 class="text-center"><b>Register Here</b></h1>
+
+                <form (ngSubmit)="registerForm()">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input [(ngModel)]="user1.username" name="username" matInput placeholder="*******" required>
+                        <mat-hint style="color: red;" *ngIf="validateUsername()==false">Username should be strong!!!</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input [(ngModel)]="user1.password" name="password" type="password" matInput placeholder="*******" required>
+                        <mat-hint style="color: red;" *ngIf="validatePassword()==false">Password should be strong, alphanumeric & long!!!</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Firstname</mat-label>
+                        <input [(ngModel)]="user1.firstName" name="firstName" matInput placeholder="firstname" required>
+                        <mat-hint style="color: red;" *ngIf="ValidateString()==false" >First Name should only be Characters!!!!</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Lastname</mat-label>
+                        <input [(ngModel)]="user1.lastName" name="lastName" matInput placeholder="lastname" required>
+                        <mat-hint style="color: red;" *ngIf="ValidateString()==false" >Last Name should only be Characters!!!!</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>E-mail</mat-label>
+                        <input [(ngModel)]="user1.email" name="email" type="email" matInput placeholder="xyz@abc.com" required>
+                        <mat-hint style="color: red;" *ngIf="validateEmail()==false" >Improper email!!!!</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Phone</mat-label>
+                        <input [(ngModel)]="user1.phone" name="phone" type="number" matInput placeholder="*******" required>
+                    </mat-form-field>
+
+
+                    <div class="container text-center" style="margin-bottom: 40px;">
+                        <button type="submit" style="width: 100%; border-radius: 18px;" mat-raised-button color="primary">Register</button>
+                        <button style="margin-top: 15px; width: 100%; border-radius: 18px;" mat-raised-button color="accent">Clear</button>
+                    </div>
+                </form>
+            </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

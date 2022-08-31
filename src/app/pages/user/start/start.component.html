@@ -1,0 +1,88 @@
+<div class="bootstrap-wrapper" *ngIf="!isSubmitted">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <ng-container >
+                    <h1 style="margin-top: 20px;  text-align: center;">
+                        <span style="background-color: white;"><b>Attempting the {{quizQues[0]?.quiz?.title}} </b></span>
+                    </h1>
+                </ng-container>
+
+
+                <mat-card *ngFor="let q of quizQues, let i=index" style="margin-top: 10px;">
+                    <mat-card-content>
+                        <p style="display: inline-block;"><b style="font-size: 18px">Q.{{i+1}}) <span style="display: inline-block" [innerHTML]="q.content"></span></b>   </p>
+                        <mat-divider></mat-divider>
+
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option1" name={{i}} [(ngModel)]="q.selectedAnswer" /> <b>{{q.option1}}</b>                           </div>
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option2" name={{i}} [(ngModel)]="q.selectedAnswer" /> <b>{{q.option2}}</b>                           </div>
+                        </div>
+                        <img src=".." alt="">
+
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option3" name={{i}} [(ngModel)]="q.selectedAnswer" /> <b>{{q.option3}}</b>                           </div>
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option4" name={{i}} [(ngModel)]="q.selectedAnswer" /> <b>{{q.option4}}</b>                           </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+                <div class="text-center" style="margin-top: 30px;  margin-bottom: 30px;">
+                    <button id="btn" type="submit" style="border-radius: 18px;" (click)="submitQuiz()" mat-raised-button color="accent">Submit</button>
+                </div>
+            </div>
+            <div class="col-md-2" style="margin-top: 40px;">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Progress</mat-card-title>
+                        <mat-card-subtitle>The quiz will be automatically submitted after the <b>{{this.quizQues[0]?.quiz?.noOfQues * 2}} minutes</b></mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h3 class="text-center"><b>{{getFormattedTime()}}</b></h3>
+                        <mat-spinner mode="determinate" color="primary" style="margin: auto;" [value]="(timer / (this.quizQues.length * 1* 60))*100">
+                        </mat-spinner>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bootstrap-wrapper" *ngIf="isSubmitted">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10" style="margin-top: 20px;" >
+                <mat-card>
+                    <div class="text-center" style="margin-bottom: 30px;">
+                        <img *ngIf="this.marksGot>0" width="150" src="../../../../assets/images/enjoy.png" alt="success">
+                        <img *ngIf="this.marksGot<=0" width="150" src="../../../../assets/images/alarm.png" alt="failure">
+                    </div>
+                    <mat-card-title>
+                        <div class="text-center">
+                            <span>{{quizQues[0]?.quiz?.title}} is completed!!!</span>
+                                                        
+                            <div class="text-center" style="margin-top:30px;">
+                                <h2>Evaluated Marks: <b>{{this.marksGot}} /{{this.quizQues[0].quiz.maxMarks}}</b></h2>
+                                <h2>Questions Attempted: <b>{{this.attempted}}/{{this.quizQues[0].quiz.noOfQues}}</b></h2>
+                                <h2>Correct answers: <b>{{this.correctAnswers}}</b></h2>
+                            </div>
+                        </div>
+                    </mat-card-title>
+
+                    <mat-card-actions>
+                        <div class="text-center">
+                            <button style="border-radius: 18px;" (click)="printPage()" mat-raised-button color="warn">Print</button>
+                            <button [routerLink]="'/user/0'" style="border-radius: 18px; margin-left: 15px;" mat-raised-button color="accent">Home</button>
+                        </div>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>

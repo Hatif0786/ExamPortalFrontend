@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; font-family: 'Lobster Two', cursive !important; }
+body { margin: 0;   background-image: url("../src/assets/images/bg.png"); }
+
+.text-center{ text-align: center;}
+
+

@@ -1,0 +1,50 @@
+<div class="bootstrap-wrapper" style="margin-top: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <h1 class="text-center" style="font-size: xx-large;"><span style="background-color: white;">Questions in {{qTitle}}</span></h1>
+                    <hr/>
+                    <mat-card *ngFor="let question of questions; let i=index" style="margin-top: 20px;">
+                        <mat-card-content>
+                            <p style="font-size:large; display: inline-block;"><b>Q.{{i+1}} <div style="display: inline-block" [innerHTML]="question.content"></div></b></p>
+
+
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p style="font-size:large"><b>1. {{question.option1}}</b></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-size:large"><b>2. {{question.option2}}</b></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p style="font-size:large"><b>3. {{question.option3}}</b></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-size:large"><b>4. {{question.option4}}</b></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-divider></mat-divider>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p style="font-size: medium; margin-top: 20px; display: inline-block;"><b>Answer: </b> {{question.answer}}</p>
+
+                                        <button class="btn-ml" (click)="deleteQues(question.quesId)" mat-stroked-button color="accent">Delete</button>
+                                        <button class="btn-ml" [routerLink]="'/admin/update-question/'+question.quesId"  mat-raised-button color="primary">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <div class="text-center">
+                        <button class="btn" style=" margin-top: 20px; border-radius: 18px;" [routerLink]="'/admin/add-question/'+qId+'/'+qTitle" mat-raised-button color="warn">Add Question</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

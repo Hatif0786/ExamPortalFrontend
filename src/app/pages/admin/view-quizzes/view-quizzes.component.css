@@ -1,0 +1,39 @@
+.example-header-image {
+    background-image: url("../../../../assets/images/test.png");
+    background-size: cover;
+  }
+
+.child{
+    display: inline-block;
+}
+
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color:red;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  
+.dotgreen {
+    height: 15px;
+    width: 15px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+
+.ml{
+    margin-left: 5px;
+}
+
+
+.btn {
+    float: right;
+    border-radius: 18px;
+}
