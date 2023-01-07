@@ -9,7 +9,7 @@ export class QuizService {
 
   constructor(private http: HttpClient) { }
 
-  base_url = "http://localhost:8080/quiz"
+  base_url = "https://paperdonebackend-production.up.railway.app/quiz"
 
   getQuizzes(){
     return this.http.get(this.base_url);

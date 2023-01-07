@@ -7,7 +7,7 @@ import { Question } from '../model/Question';
 })
 export class QuestionService {
 
-  base_url = "http://localhost:8080/question"
+  base_url = "https://paperdonebackend-production.up.railway.app/question"
 
   constructor(private http: HttpClient) { }
 

@@ -9,7 +9,7 @@ import { Quiz } from '../model/Quiz';
 })
 export class CategoryService {
 
-  base_url = "http://localhost:8080/category"
+  base_url = "https://paperdonebackend-production.up.railway.app/category"
 
   constructor(private http: HttpClient) { }
 
