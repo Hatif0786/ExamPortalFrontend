@@ -7,7 +7,7 @@ import { Question } from '../model/Question';
 })
 export class QuestionService {
 
-  base_url = "https://paperdonebackend-production.up.railway.app/question"
+  base_url = "https://paperdonebackend.onrender.com/question"
 
   constructor(private http: HttpClient) { }
 

@@ -9,7 +9,7 @@ import { Quiz } from '../model/Quiz';
 })
 export class CategoryService {
 
-  base_url = "https://paperdonebackend-production.up.railway.app/category"
+  base_url = "https://paperdonebackend.onrender.com/category"
 
   constructor(private http: HttpClient) { }
 

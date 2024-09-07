@@ -10,7 +10,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  base_url= "https://paperdonebackend-production.up.railway.app/user";
+  base_url= "https://paperdonebackend.onrender.com/user";
 
   register(user: User){
     return this.http.post(`${this.base_url}`, user);

@@ -9,7 +9,7 @@ export class QuizService {
 
   constructor(private http: HttpClient) { }
 
-  base_url = "https://paperdonebackend-production.up.railway.app/quiz"
+  base_url = "https://paperdonebackend.onrender.com/quiz"
 
   getQuizzes(){
     return this.http.get(this.base_url);
